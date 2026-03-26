@@ -1,32 +1,34 @@
-# RAK-03: Evolution & Interfacing (Creational Patterns)
+# RAK-03: Evolution & Interfacing (Creational)
 
-> "Seni menciptakan objek tanpa membuat kekacauan."
+> "Seni mengontrol kelahiran objek agar sistem tetap fleksibel dan tidak kaku."
 
-## 1. The Problem (Fundamental Intent)
-Menggunakan perintah `new MyClass()` di mana-mana akan membuat kode Anda kaku (Rigid). Jika besok cara membuat objeknya berubah, Anda harus merubah ratusan file.
+## 1. Skenario Kekacauan (The Problem)
+Menggunakan kata kunci `new` secara sembarangan di seluruh aplikasi adalah sebuah jebakan. Bayangkan jika Anda memiliki 100 tempat di kode yang menulis `new MySQLDatabase()`. Saat Anda ingin ganti ke `PostgreSQL`, Anda harus merubah 100 baris tersebut. Kode Anda menjadi "Kaku" dan sulit berevolusi.
 
-## 2. The Analogy
-Bayangkan Anda ingin memesan Pizza. Anda tidak perlu tahu bagaimana cara membuat adonan atau menyalakan oven. Anda cukup bilang ke "Pelayan" (Factory) jenis Pizza apa yang Anda mau, dan mereka akan memberikannya kepada Anda.
+## 2. Analogy
+Pola Kreasi (Creational) adalah seperti **Sistem Pemesanan di Restoran Bintang 5**. 
+- Sebagai pelanggan (Klien), Anda tidak perlu pergi ke dapur dan "membuat" sendiri steak Anda menggunakan pisau dan api.
+- Anda hanya perlu memesan lewat menu. Bagaimana steak itu dibuat, bahan apa yang dipilih, dan siapa yang memasaknya adalah urusan dapur (Pola Kreasi).
 
-## 3. Everyday Deep Dive
-Kita akan mempelajari para "Pencipta" yang pintar:
-- **Singleton**: Menjamin hanya ada satu instance di seluruh dunia.
-- **Factory Method**: Delegasikan pembuatan objek ke ahlinya.
-- **Abstract Factory**: Pabrik dari segala pabrik.
-- **Builder**: Membangun objek yang kompleks selangkah demi selangkah.
-- **Prototype**: Menggandakan objek yang sudah ada.
+## 3. Everyday Deep Dive (Penjelasan Santai)
+Pola-pola di rak ini fokus pada satu hal: **Menyembunyikan kerumitan pembuatan objek**.
+- **Factory Method & Abstract Factory**: Dapur yang menyiapkan objek untuk Anda.
+- **Singleton**: Pastikan hanya ada satu "Bos" atau "Database" di seluruh sistem.
+- **Builder**: Membangun objek yang super kompleks langkah demi langkah (seperti merakit LEGO).
+- **Prototype**: Menggandakan objek yang sudah ada daripada membuat dari nol.
 
-## 4. The Blueprint (Structural)
-(Diagram kelas untuk Creational Patterns)
-
-## 5. The "Magic" (Decoupling Strategy)
-Memisahkan proses *Instansiasi* (Pembuatan) dari *Penggunaan* objek.
-
-## 6. Multi-Language Nuances
-Beberapa bahasa seperti Go/Rust tidak punya "Class" tradisional, bagaimana cara mereka "menciptakan" objek?
-
-## 7. Wisdom & Warnings
-Jangan gunakan Singleton hanya karena malas kirim variabel lewat parameter!
+## 4. The Blueprint
+```mermaid
+graph LR
+    A[Client] -->|Request Object| B{Creational Pattern}
+    B -->|Encapsulates 'new'| C[Product Object]
+```
 
 ## 8. Practical Lab
-(Implementasi 5 Creational Patterns lintas bahasa)
+Peta jalan pembelajaran di Rak ini terbagi menjadi:
+- **[SR-01-Creational-Patterns/](./SR-01-Creational-Patterns/)**
+  - [BK-01: Factory Method](./SR-01-Creational-Patterns/BK-01-Factory-Method/)
+  - [BK-02: Singleton](./SR-01-Creational-Patterns/BK-02-Singleton/)
+  - [BK-03: Builder](./SR-01-Creational-Patterns/BK-03-Builder/)
+  - [BK-04: Prototype](./SR-01-Creational-Patterns/BK-04-Prototype/)
+  - [BK-05: Abstract Factory](./SR-01-Creational-Patterns/BK-05-Abstract-Factory/)
