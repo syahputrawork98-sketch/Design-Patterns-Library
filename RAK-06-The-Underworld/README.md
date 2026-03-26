@@ -1,37 +1,35 @@
-# RAK-06: The Underworld (Behavioral Patterns)
+# RAK-06: The Underworld (Behavioral)
 
-> "Membantu objek berkomunikasi tanpa membuat kekacauan massal."
+> "Seni mengelola komunikasi, arus data, dan tanggung jawab antar objek agar sistem tetap hidup dan reaktif."
 
-## 1. The Problem (Fundamental Intent)
-Bagaimana cara objek di dalam sistem Anda saling berbicara tanpa harus tahu detail satu sama lain? Jika Objek A memanggil Objek B, dan Objek B memanggil Objek C secara langsung, maka sistem Anda akan lumpuh saat salah satunya dirubah (Tight coupling).
+## 1. Skenario Kekacauan (The Problem)
+Pernahkah Anda menulis kode di mana sebuah objek harus tahu detail cara kerja 5 objek lainnya hanya untuk mengirim sebuah pesan? Atau sebuah kelas yang memiliki `if-else` sepanjang 500 baris hanya untuk menangani berbagai kondisi perilaku? Tanpa Pola Perilaku (Behavioral Patterns), interaksi antar objek Anda akan menjadi benang kusut yang mustahil diurai saat terjadi bug.
 
-## 2. The Analogy
-Bayangkan menara pengawas Bandara. Pilot tidak bicara langsung ke pilot lain di udara. Mereka bicara ke menara pengawas (Mediator). Ini menjaga keamanan dan keteraturan tanpa perlu semua orang tahu semua detail.
+## 2. Analogy
+Pola Perilaku adalah seperti **Hubungan Sosial dan Protokol Komunikasi**.
+- Bagaimana sebuah berita tersebar ke seluruh warga kota secara otomatis? (Observer).
+- Bagaimana seorang prajurit mengganti senjatanya sesuai kondisi medan perang? (Strategy).
+- Bagaimana sebuah lampu lalu lintas merubah perilakunya dari Hijau ke Merah? (State).
 
-## 3. Everyday Deep Dive
-Mempelajari otak dari interaksi sistem:
-- **Chain of Responsibility**: Menyalurkan permintaan melalui rantai penanganan.
-- **Command**: Mengubah permintaan menjadi objek mandiri.
-- **Iterator**: Cara menelusuri koleksi tanpa tahu isi dalamnya.
-- **Mediator**: Makelar komunikasi antar objek.
-- **Memento**: Menyimpan status objek (Ctrl+Z).
-- **Observer**: Langganan berita (Subscribe/Notify).
-- **State**: Merubah perilaku objek saat statusnya berubah.
-- **Strategy**: Punya banyak pilihan jurus dan bisa ganti jurus kapan saja.
-- **Template Method**: Menentukan kerangka algoritma di Bapak, detail di Anak.
-- **Visitor**: Menambah operasi baru tanpa merubah kelas yang didatangi.
+## 3. Everyday Deep Dive (Penjelasan Santai)
+Pola-pola di rak ini fokus pada **Interaksi dan Algoritma**:
+- **Observer**: "Sistem Langganan" (Subscription) agar semua tahu saat ada perubahan.
+- **Strategy**: "Gonta-ganti Jurus" (Algoritma) tanpa merubah orangnya.
+- **State**: "Perubahan Sifat" (Behavior) saat suasana hati (State) berubah.
+- **Command**: "Surat Perintah" yang bisa disimpan, dibatalkan (Undo), atau dijadwalkan.
+- **Iterator**: "Cara Keliling" koleksi data tanpa perlu tahu struktur dalamnya.
 
-## 4. The Blueprint (Structural)
-(Diagram alur interaksi Behavioral Patterns)
-
-## 5. The "Magic" (Decoupling Strategy)
-Memisahkan *Algoritma* dan *Perilaku* dari *Struktur* data.
-
-## 6. Multi-Language Nuances
-Beberapa bahasa modern sudah punya fitur bawaan (misal: *Channels* di Go atau *Iterators* di Rust) yang menggantikan pola tradisional.
-
-## 7. Wisdom & Warnings
-Hati-hati, Behavioral Pattern seringkali membuat alur program jadi sulit ditelusuri (*Traceability*) karena banyak loncatan logika.
+## 4. The Blueprint
+```mermaid
+graph LR
+    A[Object A] -- "Interaction Logic" --> B{Behavioral Pattern}
+    B -- "Notification/Action" --> C[Object B]
+    B -- "Algorithm Swap" --> D[Object C]
+```
 
 ## 8. Practical Lab
-(Implementasi Behavioral Patterns lintas bahasa)
+Struktur navigasi rak ini mengikuti **Hirarki 5-Level**:
+- **[SR-01-Behavioral-Patterns/](./SR-01-Behavioral-Patterns/)**
+  - [BK-01: Observer](./SR-01-Behavioral-Patterns/BK-01-Observer/)
+  - [BK-02: Strategy](./SR-01-Behavioral-Patterns/BK-02-Strategy/)
+  - [BK-03: State](./SR-01-Behavioral-Patterns/BK-03-State/)

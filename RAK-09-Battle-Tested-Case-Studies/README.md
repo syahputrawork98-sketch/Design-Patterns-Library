@@ -1,31 +1,33 @@
-# RAK-09: Battle-Tested Case Studies (Real World)
+# RAK-09: Battle-Tested Case Studies
 
-> "Merakit kepingan menjadi mesin yang utuh."
+> "Di mana teori bertemu realita: Seni menggabungkan pola untuk membangun sistem raksasa."
 
-## 1. The Problem (Fundamental Intent)
-Faktanya, satu Design Pattern jarang digunakan sendirian. Di dunia nyata, tantangan sebenarnya adalah **Kombinasi**. Mengetahui cara pakai mur dan baut saja tidak cukup untuk membangun mesin mobil.
+## 1. Skenario Kekacauan (The Problem)
+Pola desain dalam buku teks seringkali terlihat sangat sederhana dan terisolasi. Namun, di dunia nyata, Anda tidak hanya menggunakan satu pola. Anda harus menggabungkan 5-10 pola untuk membangun sistem yang skalabel. Tanpa pemahaman tentang cara menggabungkan pola (*Pattern Composition*), aplikasi Anda akan penuh dengan kode boilerplate dan sulit diintegrasikan.
 
-## 2. The Analogy
-Bayangkan Anda sudah belajar cara mengaduk semen, menumpuk bata, dan memasang genteng. RAK-09 adalah saat kita benar-benar Membangun Rumah contoh yang nyata.
+## 2. Analogy
+Pola Desain adalah seperti **Lego**. 
+- Satu balok (Pola) punya kegunaan sendiri.
+- Namun, untuk membangun sebuah **Kastil yang Megah** (Aplikasi), Anda harus tahu cara menyusun balok-balok tersebut agar saling mengunci dan kokoh.
+- Rak ini adalah panduan untuk membangun "Kastil" tersebut.
 
-## 3. Everyday Deep Dive
-Studi kasus proyek mini lintas industri:
-- **Sistem Pembayaran (Payment)**: Gabungan Strategy + Template Method + Decorator.
-- **Game Engine**: Gabungan State + Observer + Singleton.
-- **File Processing System**: Gabungan Adapter + Bridge + Facade.
-- **Notification System**: Gabungan Mediator + Command.
+## 3. Everyday Deep Dive (Penjelasan Santai)
+Di Rak ini, kita tidak lagi belajar "Apa itu Singleton?", tapi "Bagaimana Singleton berkolaborasi dengan Factory dan Observer?". Kita akan membedah:
+- **E-Commerce Engine**: Mengelola pembayaran, stok, dan pengiriman.
+- **Microservices Orchestration**: Bagaimana pola-pola ini bekerja di sistem terdistribusi.
+- **Game Engine**: Mengelola state karakter, efek visual, dan input user secara real-time.
 
-## 4. The Blueprint (Structural)
-(Diagram besar yang menunjukkan penggabungan beberapa pola desain dalam satu sistem)
-
-## 5. The "Magic" (Decoupling Strategy)
-Melihat bagaimana pola-pola tersebut bekerja sama untuk menjaga integritas sistem yang besar.
-
-## 6. Multi-Language Nuances
-Memilih kombinasi pola yang paling cocok untuk ekosistem bahasa tertentu.
-
-## 7. Wisdom & Warnings
-Proyek nyata selalu berantakan. Tugas kita bukan membuat "Kode Sempurna", tapi membuat "Kode yang Bisa Dikelola" (Manageable code).
+## 4. The Blueprint (Composition)
+```mermaid
+graph TD
+    A[User Action] --> B{Facade}
+    B --> C{Factory: Create Order}
+    C --> D{Strategy: Process Payment}
+    D --> E{Observer: Notify Stock & User}
+    E --> F{Command: Log Transaction}
+```
 
 ## 8. Practical Lab
-(Build & Run: Proyek mini yang mengimplementasikan lebih dari 3 Design Patterns)
+Struktur navigasi rak ini mengikuti **Hirarki 5-Level**:
+- **[SR-01-Complex-Architectures/](./SR-01-Complex-Architectures/)**
+  - [BK-01: E-Commerce Engine](./SR-01-Complex-Architectures/BK-01-E-Commerce-Engine/)

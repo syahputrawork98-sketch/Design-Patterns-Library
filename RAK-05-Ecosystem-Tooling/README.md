@@ -1,29 +1,34 @@
 # RAK-05: Ecosystem & Tooling
 
-> "Visualisasi dan standar komunikasi sang arsitek."
+> "Sebagus-bagusnya kode, ia butuh panggung yang kokoh untuk bisa berjalan dengan cepat dan aman."
 
-## 1. The Problem (Fundamental Intent)
-Kode adalah teks, dan teks sulit digambarkan secara luas. Tanpa standar visual, diskusi antar arsitek akan berakhir dengan coretan di kertas yang tidak jelas maksudnya.
+## 1. Skenario Kekacauan (The Problem)
+Pernahkah Anda mencoba menjalankan kode TypeScript di browser tapi gagal karena browser tidak mengerti sintaksnya? Atau Anda menulis ribuan baris kode yang penuh dengan typo karena tidak ada alat yang mengingatkan Anda? Tanpa **Ecosystem & Tooling**, pengerjaan proyek software akan terasa seperti membangun gedung pencakar langit menggunakan palu kayu. Lambat, berbahaya, dan melelahkan.
 
-## 2. The Analogy
-Peta buta tidak membantu turis. Arsitek butuh simbol standar (seperti simbol listrik atau air di denah rumah) agar semua orang (kontraktor/developer) paham hal yang sama tanpa perlu didebatkan.
+## 2. Analogy
+Ecosystem & Tooling adalah seperti **Workshop (Bengkel)** bagi seorang pengrajin. 
+- Anda punya pola desain (Design Patterns) sebagai teknik ukir.
+- Tapi Anda butuh Meja kerja (IDE), Alat Serut Otomatis (Bundlers), dan Penggaris digital (Linters) agar karya Anda presisi dan selesai tepat waktu.
 
-## 3. Everyday Deep Dive
-- **UML Standard**: Memahami kotak, panah garputala, dan panah putus-putus.
-- **Mermaid.js**: Menulis diagram langsung di dalam dokumen Markdown.
-- **Architecture Testing**: Menggunakan tool untuk memastikan tidak ada developer yang melanggar aturan desain secara tidak sengaja.
+## 3. Everyday Deep Dive (Penjelasan Santai)
+Rak ini membahas "Sabuk Alat" (Toolbelt) seorang engineer modern:
+- **Transpilers (SWC/Babel)**: Penerjemah bahasa gaul (Modern TS) ke bahasa kuno (Old JS).
+- **Bundlers (Vite/Rollup)**: Tukang bungkus yang merapikan ribuan file menjadi satu paket hemat.
+- **Linters (ESLint)**: Satpam yang menegur kalau cara nulis Anda berantakan.
+- **Testing (Jest/Vitest)**: Tim Quality Control yang memastikan mesin Anda tidak meledak saat dijalankan.
 
-## 4. The Blueprint (Structural)
-(Contoh Visualisasi Diagram menggunakan Mermaid)
-
-## 5. The "Magic" (Decoupling Strategy)
-Melihat struktur dari ketinggian 10.000 kaki untuk memastikan sistem tidak saling melilit.
-
-## 6. Multi-Language Nuances
-Tools linter dan static analysis di berbagai bahasa untuk menjaga integritas arsitektural.
-
-## 7. Wisdom & Warnings
-Diagram hanya alat bantu. Jangan habiskan 90% waktu Anda menggambar diagram tapi tidak membuat kode yang jalan.
+## 4. The Blueprint (The Pipeline)
+```mermaid
+graph LR
+    Source[Code TS] --> B[Linter: Cek Aturan]
+    B --> C[Transpiler: Ubah ke JS]
+    C --> D[Bundler: Bungkus Paket]
+    D --> E[Production Space]
+```
 
 ## 8. Practical Lab
-(Workshop membuat Mermaid Diagram yang rapi dan benar)
+Struktur navigasi rak ini mengikuti **Hirarki 5-Level**:
+- **[SR-01-Tooling-Philosophy/](./SR-01-Tooling-Philosophy/)**: Mengapa kita butuh alat?
+- **[SR-02-Modern-Stack/](./SR-02-Modern-Stack/)**:
+  - [BK-01: Bundlers & Transpilers](./SR-02-Modern-Stack/BK-01-Bundlers-Transpilers/)
+  - [BK-02: Quality Gates](./SR-02-Modern-Stack/BK-02-Quality-Gates/)

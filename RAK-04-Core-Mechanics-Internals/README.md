@@ -1,34 +1,35 @@
-# RAK-04: Core Mechanics & Internals (Structural Patterns)
+# RAK-04: Core Mechanics & Internals (Structural)
 
-> "Menghubungkan komponen agar bekerja harmonis."
+> "Seni menyusun kelas dan objek menjadi struktur yang lebih besar tanpa mengorbankan fleksibilitas."
 
-## 1. The Problem (Fundamental Intent)
-Bagaimana cara menghubungkan dua komponen yang tidak nyambung? Atau bagaimana cara membungkus fitur lama dengan fitur baru tanpa merusak kode yang sudah ada?
+## 1. Skenario Kekacauan (The Problem)
+Pernahkah Anda mencoba menghubungkan dua sistem yang tidak bisa "berbicara" satu sama lain? Atau ingin menambah fitur ke sebuah objek tanpa harus merusak kelas aslinya? Tanpa Pola Struktural (Structural Patterns), Anda akan terjebak dalam kode yang kaku, penuh dengan *hacky solutions*, dan sulit dikelola seiring bertambahnya komponen.
 
-## 2. The Analogy
-Bayangkan Anda punya iPhone tapi colokan di dinding adalah colokan lama. Anda butuh **Adapter**. Structural Patterns adalah "Adapter", "Pembungkus", dan "Jembatan" untuk kode Anda.
+## 2. Analogy
+Pola Struktural adalah seperti **Arsitektur Bangunan Modern**. 
+- Bagaimana pipa air dihubungkan ke keran? (Adapter).
+- Bagaimana cara menambah lapisan insulasi di dinding tanpa merobohkan rumah? (Decorator).
+- Bagaimana cara menyatukan seluruh sistem listrik yang rumit ke dalam satu tombol saklar yang mudah ditekan? (Facade).
 
-## 3. Everyday Deep Dive
-Mempelajari arsitektur internal:
-- **Adapter**: Penerjemah antar dua interface berbeda.
-- **Bridge**: Memisahkan abstraksi dari implementasi.
-- **Composite**: Mengelola struktur pohon (Tree).
-- **Decorator**: Menambah fitur baru secara dinamis.
-- **Facade**: Antarmuka sederhana untuk sistem yang rumit.
-- **Flyweight**: Berbagi memori untuk objek kecil dalam jumlah besar.
-- **Proxy**: Perwakilan untuk objek lain.
+## 3. Everyday Deep Dive (Penjelasan Santai)
+Pola-pola di rak ini fokus pada **Komposisi Objek**:
+- **Adapter**: "Colokan Konverter" untuk interface yang beda.
+- **Decorator**: "Bungkus Tambahan" untuk menambah fungsi.
+- **Facade**: "Satu Tombol" untuk menyembunyikan kerumitan internal.
+- **Composite**: Mengelola struktur "Pohon" (seperti folder file).
+- **Proxy**: "Satpam" atau pengganti untuk kontrol akses.
 
-## 4. The Blueprint (Structural)
-(Diagram komposisi objek)
-
-## 5. The "Magic" (Decoupling Strategy)
-Menggunakan *Komposisi* daripada *Pewarisan* (Composition over Inheritance).
-
-## 6. Multi-Language Nuances
-Bagaimana Traits di Rust mempermudah pembuatan Decorators dibandingkan Class di TS.
-
-## 7. Wisdom & Warnings
-Jangan membuat lapisan abstraksi terlalu dalam hingga Anda sendiri bingung di mana logika aslinya berada.
+## 4. The Blueprint
+```mermaid
+graph TD
+    A[Sistem A] --> B{Structural Pattern}
+    C[Sistem B] --> B
+    B --> D[Struktur Baru yang Solid]
+```
 
 ## 8. Practical Lab
-(Implementasi Structural Patterns lintas bahasa)
+Struktur navigasi rak ini mengikuti **Hirarki 5-Level**:
+- **[SR-01-Structural-Patterns/](./SR-01-Structural-Patterns/)**
+  - [BK-01: Adapter](./SR-01-Structural-Patterns/BK-01-Adapter/)
+  - [BK-02: Decorator](./SR-01-Structural-Patterns/BK-02-Decorator/)
+  - [BK-03: Facade](./SR-01-Structural-Patterns/BK-03-Facade/)
