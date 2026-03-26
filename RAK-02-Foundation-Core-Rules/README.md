@@ -44,9 +44,10 @@ Keajaiban SOLID adalah **Isolasi Perubahan**. Saat bos Anda minta ganti database
 Hati-hati terjebak dalam **Over-engineering**. Jika Anda hanya membuat skrip kecil 10 baris, tidak perlu menerapkan kelima prinsip SOLID secara brutal. Gunakan SOLID saat sistem Anda mulai tumbuh dan mulai terasa "sakit" saat diubah.
 
 ## 8. Practical Lab
-Mari kita lihat perbedaan nyata antara kode "Kacau" dan kode "SOLID" di folder:
-- [examples/SRP/](./examples/SRP/)
-- [examples/OCP/](./examples/OCP/)
-- [examples/LSP/](./examples/LSP/)
-- [examples/ISP/](./examples/ISP/)
-- [examples/DIP/](./examples/DIP/)
+Pembelajaran SOLID di Rak ini dikelola dalam hirarki 5-level:
+- **[SR-01: SOLID Principles](./SR-01-SOLID-Principles/)**
+  - **[BK-01: S - Single Responsibility](./SR-01-SOLID-Principles/BK-01-S-Single-Responsibility/)**
+  - **[BK-02: O - Open/Closed](./SR-01-SOLID-Principles/BK-02-O-Open-Closed/)**
+  - **[BK-03: L - Liskov Substitution](./SR-01-SOLID-Principles/BK-03-L-Liskov-Substitution/)**
+  - **[BK-04: I - Interface Segregation](./SR-01-SOLID-Principles/BK-04-I-Interface-Segregation/)**
+  - **[BK-05: D - Dependency Inversion](./SR-01-SOLID-Principles/BK-05-D-Dependency-Inversion/)**
